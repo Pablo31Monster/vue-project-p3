@@ -245,4 +245,73 @@ const validarFormulario = (event) => {
         font-size: 18px;
         margin-bottom: 16px;
     }
+
+    @media (max-width: 1000px) {
+        .center {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .hola {
+            padding-left: 18px;
+            padding-right: 18px;
+            height: 82px;
+        }
+
+        .hola-h {
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        .estrella {
+            width: 60px;
+            height: 60px;
+        }
+
+        .estrella-block {
+            width: 100%;
+        }
+
+        .miga {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .comentario {
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+        }
+
+        .submit-div {
+            width: 100%;
+        }
+
+        .boton-volver {
+            width: 45%;
+            font-size: 16px;
+        }
+
+        .boton-guardar {
+            width: 45%;
+            font-size: 16px;
+        }
+    }
 </style>

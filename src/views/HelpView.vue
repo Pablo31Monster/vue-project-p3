@@ -14,7 +14,6 @@
 </template>
 
 <style scoped>
-
     a {
         font-size: 18px;
         border-radius: 12px;
@@ -38,7 +37,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 100%;
+        width: 50%;
         margin-top: 40px;
     }
 
@@ -48,18 +47,34 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding-left: 470px;
-        padding-right: 470px;
+        
     }
 
     h1 {
         font-family: "Arial", sans-serif;
         font-size: 28px;
         color: #333333;
-        text-align: left;
+        text-align: center;
         line-height: normal;
         font-weight: 700;
         margin-bottom: 12px;
         margin-top: 20px;
+    }
+
+    @media (max-width: 1000px) {
+        .botones {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        a {
+            width: 100%;
+            margin-top: 10px;
+        }
     }
 </style>

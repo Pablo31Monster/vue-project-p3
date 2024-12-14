@@ -183,4 +183,25 @@
         line-height: normal;
         font-size: 36px;
     }
+
+    @media (max-width: 1000px) {
+        .inputs input {
+            width: 100% !important;
+            font-size: 18px !important;
+        }
+
+        .inputs {
+            margin-left: 18px;
+            margin-right: 18px;
+        }
+
+        .button-submit {
+            right: 18px;
+        }
+
+        .ayuda {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
 </style>

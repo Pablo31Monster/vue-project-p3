@@ -104,6 +104,7 @@
         width: 149px;
         height: 24px;
         margin-left: 40px;
+        margin-right: 40px;
     }
 
     .user-icon {
