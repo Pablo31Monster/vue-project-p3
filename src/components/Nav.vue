@@ -27,7 +27,7 @@
 <template>
     <nav>
         <div :class="classNav">
-            <a :href="link">
+            <a class="nav-link" :href="link">
                 <img class="logo" src="../assets/logo.png" alt="SportTraining" />
             </a>
 
@@ -42,7 +42,7 @@
 
             <img class="user-icon" src="../assets/user_icon.png" alt="SportTraining" v-if="!basic" @click="toggleDropdown"/>
         </div>
-        <div class="desplegable" v-show="isDropdownOpen">
+        <div :class="['desplegable', { active: isDropdownOpen }]">
             <div class="fondo" @click="closeDropdown"></div>
             <div class="panel">
                 <a class="nav-item">Cambiar idioma</a>
@@ -67,7 +67,11 @@
         box-sizing: border-box;
         z-index: 5;
     }
-
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .nav-basic {
         display: flex;
         justify-content: center;
@@ -108,6 +112,7 @@
         width: 38px;
         height: 38px;
         margin-right: 60px;
+        cursor: pointer;
     }
 
     .desplegable {
@@ -117,9 +122,14 @@
         width: 100%;
         height: 100%;
         z-index: 4;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+    }
+    
+    .desplegable.active {
         opacity: 1;
         visibility: visible;
-        transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
     }
 
     .fondo {

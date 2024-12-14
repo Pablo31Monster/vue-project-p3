@@ -2,23 +2,34 @@
     defineProps({
         title: String,
         subTitle: String,
-        icon: String
+        icon: String,
+        img: String
     });
 </script>
 
 <template>
     <div class="link-item">
-        <div class="link-item-content">
-            <div class="link-item-text">
+        <div :class="['link-item-content', { center: !title }]">
+            <div v-if="title" class="link-item-text">
                 <h3 class="link-item-text-title">{{ title }}</h3>
                 <p class="link-item-text-subtitle">{{ subTitle }}</p>
             </div>
             <span v-if="icon" class="link-item-icon">{{icon}}</span>
+            <img v-if="img" class="icon" :src="img" alt="Imagen" />
         </div>  
     </div>
 </template>
 
 <style scoped>
+    .center {
+        justify-content: center !important;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
     .link-item {
         width: 475px;
         height: 75px;
@@ -29,7 +40,7 @@
         border-radius: 12px;
         background-color: #f2f2f2;
         box-sizing: border-box;
-
+        cursor: pointer;
         transition: all 0.15s ease-in-out ;
     }
 
@@ -46,7 +57,7 @@
     }
 
     .link-item-icon {
-        font-size: 36px
+        font-size: 36px;
     }
 
     .link-item-text {
