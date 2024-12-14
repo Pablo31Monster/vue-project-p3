@@ -4,10 +4,7 @@
 
     const route = useRoute();
     const basic = computed(() => {
-        return route.path === '/login';
-    });
-    const link = computed(() => {
-        return basic.value ? '/login' : '/';
+        return route.path === '/login' || route.path === '/';
     });
     const classNav = computed(() => {
         return basic.value ? 'nav-basic' : 'nav';
@@ -27,7 +24,7 @@
 <template>
     <nav>
         <div :class="classNav">
-            <a class="nav-link" :href="link">
+            <a class="nav-link" href="/">
                 <img class="logo" src="../assets/logo.png" alt="SportTraining" />
             </a>
 
