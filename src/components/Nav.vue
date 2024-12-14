@@ -41,7 +41,7 @@
 <template>
     <nav>
         <div :class="classNav">
-            <img class="menu-icon" src="../assets/openNav.png" alt="Open nav Menu" @click="toggleNavMenu" />
+            <img class="menu-icon" src="../assets/openNav.png" alt="Open nav Menu" @click="toggleNavMenu" v-if="!basic && !isDropdownNavOpen" />
 
             <a class="nav-link" href="/">
                 <img class="logo" src="../assets/logo.png" alt="Logo SportTraining" />
