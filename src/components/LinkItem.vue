@@ -81,4 +81,11 @@
         font-size: 18px;
         line-height: normal;
     }
+
+    @media (max-width: 700px) {
+        .link-item{
+            width: 100%;
+        }
+    }
+
 </style>

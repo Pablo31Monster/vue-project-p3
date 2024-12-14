@@ -45,7 +45,7 @@
             <h1 class="hola-h">Hola, Pablo</h1>
         </div>
 
-        <div class="programas">
+        <div class="programas"> GAY
             <h1>Crear nuevo programa</h1>
             <LinkItem img="/src/assets/add.png"></LinkItem>  
             <h1>Tus programas</h1>
@@ -303,5 +303,24 @@
         line-height: normal;
         font-weight: 700;
         margin-bottom: 4px;
+    }
+    @media (max-width: 1000px) {
+        .hola{
+            padding: 0px 6.25%;
+        }
+
+        .programas{
+            padding: 0px 6.25%;
+        }
+
+        .bloque-puntos-estrella {
+            width: auto;
+            margin: 0px 3.125%;
+            padding: 24px 3.125%;
+        }
+        .ajustes{
+            padding: 0px 6.25%;
+        }
+        
     }
 </style>

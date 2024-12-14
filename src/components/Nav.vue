@@ -10,6 +10,7 @@
         return basic.value ? 'nav-basic' : 'nav';
     });
 
+    /*User display menu*/
     const isDropdownOpen = ref(false);
 
     const toggleDropdown = () => {
@@ -152,5 +153,21 @@
         background-color: #ffffff;
         top: 55px;
         left: 0;
+    }
+
+    @media (max-width: 1000px) {
+        .nav-items {
+            display: none; /* Oculta el menú de navegación en pantallas pequeñas */
+        }
+
+        .nav-items{
+            display: none;
+        }
+
+        .panel{
+            padding: 5px;
+            height: 200px;
+        }
+        
     }
 </style>

@@ -87,4 +87,28 @@
         text-align: left;
         line-height: normal;
     }
+
+    @media (max-width: 1000px) {
+        .text {
+            font-size: 12px;
+        }
+        .info {
+            width: 338px;
+            height: 34px;
+        }
+        .footer {
+            height: 205px;
+        }
+
+        .data-item {
+            margin-bottom: 3px;
+        }
+
+        .data-intermedia {
+            width: 338px;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: center;
+        }
+    }
 </style>
