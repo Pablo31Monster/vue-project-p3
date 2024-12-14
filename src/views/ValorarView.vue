@@ -258,6 +258,7 @@ const validarFormulario = (event) => {
             padding-left: 18px;
             padding-right: 18px;
             height: 82px;
+            height: 82px;
         }
 
         .hola-h {

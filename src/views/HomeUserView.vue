@@ -16,7 +16,7 @@
             <template #body>
                 <p>Estas son tus propuestas de programas de entrenamiento</p>
                 <LinkItem class="mb-2" title="Futbol y más" sub-title="Comienza el 03/02/2025" icon="⚽"></LinkItem>  
-                <LinkItem title="Keep dancing" sub-title="Te quedan 2 días para revisar el programa" icon="💃"></LinkItem>
+                <LinkItem title="Keep dancing" sub-title="Quedan 2 días" icon="💃"></LinkItem>
                 
             </template>
         </Modal>
@@ -307,6 +307,11 @@
     @media (max-width: 1000px) {
         .hola{
             padding: 0px 6.25%;
+            height: 82px;
+        }
+
+        .hola-h {
+            margin-top: 40px;
         }
 
         .programas{
@@ -322,5 +327,13 @@
             padding: 0px 6.25%;
         }
         
+        .flex-row {
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        .link-item{
+            margin-bottom: 16px;
+        }
     }
 </style>

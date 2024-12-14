@@ -33,7 +33,8 @@
     .footer {
         height: 265px;
         width: 100%;
-        padding: 2px 2px 2px 2px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         background-color: #f2f2f2;
         box-sizing: border-box;
         display: flex;
@@ -90,14 +91,14 @@
 
     @media (max-width: 1000px) {
         .text {
-            font-size: 12px;
+            font-size: 16px;
         }
         .info {
             width: 338px;
             height: 34px;
         }
         .footer {
-            height: 205px;
+            height: fit-content;
         }
 
         .data-item {

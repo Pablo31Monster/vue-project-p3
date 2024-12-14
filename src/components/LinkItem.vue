@@ -57,7 +57,7 @@
     }
 
     .link-item-icon {
-        font-size: 36px;
+        font-size: 36px !important;
     }
 
     .link-item-text {
