@@ -12,24 +12,42 @@
 
     /*User display menu*/
     const isDropdownOpen = ref(false);
+    const isDropdownNavOpen = ref(false);
 
     const toggleDropdown = () => {
         isDropdownOpen.value = !isDropdownOpen.value;
+        if (isDropdownOpen.value) {
+            isDropdownNavOpen.value = false; // Cierra el menú de navegación si el menú de usuario está abierto
+        }
+    };
+
+    const toggleNavMenu = () => {
+        isDropdownNavOpen.value = !isDropdownNavOpen.value;
+        console.log('isDropdownNavOpen:', isDropdownNavOpen.value); 
+        if (isDropdownNavOpen.value) {
+            isDropdownOpen.value = false; // Cierra el menú de usuario si el menú de navegación está abierto
+        }
     };
 
     const closeDropdown = () => {
         isDropdownOpen.value = false;
+    };
+
+    const closeNavMenu = () => {
+        isDropdownNavOpen.value = false;
     };
 </script>
 
 <template>
     <nav>
         <div :class="classNav">
+            <img class="menu-icon" src="../assets/openNav.png" alt="Open nav Menu" @click="toggleNavMenu" />
+
             <a class="nav-link" href="/">
-                <img class="logo" src="../assets/logo.png" alt="SportTraining" />
+                <img class="logo" src="../assets/logo.png" alt="Logo SportTraining" />
             </a>
 
-            <div class="nav-items"  v-if="!basic">
+            <div class="nav-items"  v-if="!basic && !isDropdownNavOpen">
                 <a class="nav-item">Inicio</a>
                 <a class="nav-item">Centros deportivos</a>
                 <a class="nav-item">Instalaciones deporitivas</a>
@@ -38,7 +56,7 @@
                 <a class="nav-item">Soporte</a>
             </div>
 
-            <img class="user-icon" src="../assets/user_icon.png" alt="SportTraining" v-if="!basic" @click="toggleDropdown"/>
+            <img class="user-icon" src="../assets/user_icon.png" alt="user profile picture" v-if="!basic" @click="toggleDropdown"/>
         </div>
         <div :class="['desplegable', { active: isDropdownOpen }]">
             <div class="fondo" @click="closeDropdown"></div>
@@ -48,6 +66,17 @@
                 <a class="nav-item">Cerrar sesión</a>
             </div>
         </div>
+        <div :class="['dropdownnav', { active: isDropdownNavOpen }]">
+            <img class="menu-close-icon" src="../assets/closeNav.png" alt="Close nav menu" @click="toggleNavMenu" />
+
+            <a class="nav-item" @click="closeNavMenu">Inicio</a>
+            <a class="nav-item" @click="closeNavMenu">Centros deportivos</a>
+            <a class="nav-item" @click="closeNavMenu">Instalaciones deportivas</a>
+            <a class="nav-item" @click="closeNavMenu">Actividades deportivas</a>
+            <a class="nav-item" @click="closeNavMenu">Ayuda</a>
+            <a class="nav-item" @click="closeNavMenu">Soporte</a>
+        </div>
+        
     </nav>
 </template>
 
@@ -142,6 +171,10 @@
         position: absolute;
     }
 
+    .menu-icon{
+        display: none;
+    }
+
     .panel {
         z-index: 4;
         display: flex;
@@ -156,19 +189,64 @@
         left: 0;
     }
 
-    @media (max-width: 1000px) {
-        .nav-items {
-            display: none; /* Oculta el menú de navegación en pantallas pequeñas */
+    .dropdownnav, .dropdownnav.active {
+        display: none;
+    }
+
+
+    @media (max-width: 700px) {
+        .nav{
+            padding: 0px 2.5%;
         }
 
-        .nav-items{
-            display: none;
+        .nav-items {
+            display: none; /* Oculta el menú de navegación en pantallas pequeñas */
         }
 
         .panel{
             padding: 5px;
             height: 200px;
         }
+
+        .menu-icon{
+            display: inline;
+            width: 40px;
+            height: 40px;
+        }
+
+        .user-icon{
+            margin: 0;
+        }
         
+        .dropdownnav {
+            display: none; /* Ocultado por defecto */
+            flex-direction: column; /* Organiza los ítems en columna */
+            position: fixed; /* Para ocupar toda la pantalla */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ancho completo de la pantalla */
+            height: 100%; /* Altura completa de la pantalla */
+            background-color: white;
+            z-index: 100; 
+            padding: 2.5% 6%;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .dropdownnav.active {
+            display: flex;
+            opacity: 1; /* Asegúrate de que sea visible */
+            visibility: visible;
+        }
+
+        .menu-close-icon{
+            width: 40px;
+            height: 40px;
+            margin-bottom: 30px;
+        }
+
+        .dropdownnav .nav-item{
+            padding: 7px 0px;
+        }
+
     }
 </style>

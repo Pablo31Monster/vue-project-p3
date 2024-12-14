@@ -87,4 +87,21 @@
         background-color: #ffffff;
         width: fit-content;
     }
+
+    @media (max-width: 700px) {
+
+        .modal {
+            align-items: self-end;
+        }
+        
+        .panel{
+            width: 100%;
+            height: 95%;
+            border-radius: 24px 24px 0px 0px;
+            display: block;
+        }
+
+
+    }
+
 </style>

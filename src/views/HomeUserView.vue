@@ -45,7 +45,7 @@
             <h1 class="hola-h">Hola, Pablo</h1>
         </div>
 
-        <div class="programas"> GAY
+        <div class="programas">
             <h1>Crear nuevo programa</h1>
             <LinkItem img="/src/assets/add.png"></LinkItem>  
             <h1>Tus programas</h1>
