@@ -36,7 +36,7 @@ const validarFormulario = (event) => {
                         <div class="estrella-block" v-for="n in 5">
                             <img
                                 :key="n"
-                                :src="n <= valoracion ? '/src/assets/star_filled.png' : '/src/assets/star.png'"
+                                :src="n <= valoracion ? '/star_filled.png' : '/star.png'"
                                 @click="cambiarValoracion(n)"
                                 class="estrella"
                                 alt="estrella"

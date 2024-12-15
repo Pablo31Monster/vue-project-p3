@@ -47,7 +47,7 @@
 
         <div class="programas">
             <h1>Crear nuevo programa</h1>
-            <LinkItem img="/src/assets/add.png"></LinkItem>  
+            <LinkItem img="/add.png"></LinkItem>  
             <h1>Tus programas</h1>
             <p>Actualmente tienes 5 programas de entrenamiento</p>
 
